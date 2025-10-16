@@ -48,7 +48,7 @@ function showRecruitList() {
       li.innerHTML = `
         <strong>クエスト ${r.quest}</strong><br>
         コメント：${r.comment}<br>
-        <a href="${r.url}" target="_blank">${r.url}</a>
+        ${r.url}${r.url}</a>
       `;
       list.appendChild(li);
     });
@@ -59,3 +59,4 @@ function goBackTo(step) {
   document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
   document.getElementById(`step${step}`).classList.remove('hidden');
 }
+``
