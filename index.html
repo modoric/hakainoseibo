@@ -6,17 +6,15 @@
   <meta name="description" content="モンストの破壊の星墓マルチ募集掲示板。誰でも簡単に募集・参加できます。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="rgx_3r_gQiuF1Sw23TJ_R7We0EN8uyiSfgE2srGfKbE" />
-  <tyle.css
-</head>
-<body>
+  <link rel="stylesheetdy>
   <div id="app">
-    <!-- ステップ1：破壊の星墓を選択 -->
+    <!-- ステップ1 -->
     <section id="step1">
       <h1>破壊の星墓マルチ掲示板</h1>
       <button class="orange" onclick="goToStep(2)">破壊の星墓を選ぶ</button>
     </section>
 
-    <!-- ステップ2：募集 or 参加 -->
+    <!-- ステップ2 -->
     <section id="step2" class="hidden">
       <h2>モードを選択</h2>
       <button class="orange" onclick="selectMode('募集')">マルチ募集</button>
@@ -25,20 +23,29 @@
       <button class="gray" onclick="goBackTo(1)">← クエストを選び直す</button>
     </section>
 
-    <!-- ステップ3：クエスト選択 -->
+    <!-- ステップ3 -->
     <section id="step3" class="hidden">
       <h2>クエストを選択</h2>
       <label for="questSelect">クエストを選んでください：</label>
       <select id="questSelect">
         <option value="">選んでください</option>
-        ${[...Array(10)].map((_, i) => `<option value="${i+1}">破壊の星墓 ${i+1}</option>`).join('')}
+        <option value="1">破壊の星墓 1</option>
+        <option value="2">破壊の星墓 2</option>
+        <option value="3">破壊の星墓 3</option>
+        <option value="4">破壊の星墓 4</option>
+        <option value="5">破壊の星墓 5</option>
+        <option value="6">破壊の星墓 6</option>
+        <option value="7">破壊の星墓 7</option>
+        <option value="8">破壊の星墓 8</option>
+        <option value="9">破壊の星墓 9</option>
+        <option value="10">破壊の星墓 10</option>
       </select>
       <button class="orange" onclick="goToStep(4)">次へ</button>
       <br>
       <button class="gray" onclick="goBackTo(2)">← モード選択に戻る</button>
     </section>
 
-    <!-- ステップ4：募集 or 参加画面 -->
+    <!-- ステップ4 -->
     <section id="step4" class="hidden">
       <div id="recruitForm" class="hidden">
         <h2>募集する</h2>
