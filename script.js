@@ -59,4 +59,3 @@ function goBackTo(step) {
   document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
   document.getElementById(`step${step}`).classList.remove('hidden');
 }
-``
