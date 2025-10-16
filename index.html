@@ -6,7 +6,7 @@
   <meta name="description" content="モンストの破壊の星墓マルチ募集掲示板。誰でも簡単に募集・参加できます。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="rgx_3r_gQiuF1Sw23TJ_R7We0EN8uyiSfgE2srGfKbE" />
-  style.css
+  <tyle.css
 </head>
 <body>
   <div id="app">
@@ -31,16 +31,7 @@
       <label for="questSelect">クエストを選んでください：</label>
       <select id="questSelect">
         <option value="">選んでください</option>
-        <option value="1">破壊の星墓 1</option>
-        <option value="2">破壊の星墓 2</option>
-        <option value="3">破壊の星墓 3</option>
-        <option value="4">破壊の星墓 4</option>
-        <option value="5">破壊の星墓 5</option>
-        <option value="6">破壊の星墓 6</option>
-        <option value="7">破壊の星墓 7</option>
-        <option value="8">破壊の星墓 8</option>
-        <option value="9">破壊の星墓 9</option>
-        <option value="10">破壊の星墓 10</option>
+        ${[...Array(10)].map((_, i) => `<option value="${i+1}">破壊の星墓 ${i+1}</option>`).join('')}
       </select>
       <button class="orange" onclick="goToStep(4)">次へ</button>
       <br>
@@ -67,6 +58,6 @@
     </section>
   </div>
 
-  <script src="script.jsody>
+  script.js</script>
+</body>
 </html>
-
