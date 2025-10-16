@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>破壊の星墓マルチ掲示板</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- ステップ1：破壊の星墓を選ぶ -->
+    <section id="step1">
+      <h1>破壊の星墓マルチ掲示板</h1>
+      <button class="orange" onclick="goToStep(2)">破壊の星墓を選ぶ</button>
+    </section>
+
+    <!-- ステップ2：募集 or 参加 -->
+    <section id="step2" class="hidden">
+      <h2>モードを選択</h2>
+      <button class="orange" onclick="selectMode('募集')">マルチ募集</button>
+      <button class="green" onclick="selectMode('参加')">マルチ参加</button>
+      <br>
+      <button class="gray" onclick="goBackTo(1)">← クエストを選び直す</button>
+    </section>
+
+    <!-- ステップ3：クエスト選択 -->
+    <section id="step3" class="hidden">
+      <h2>クエストを選択</h2>
+      <select id="questSelect">
+        <option value="">選んでください</option>
+        <option value="1">破壊の星墓 1</option>
+        <option value="2">破壊の星墓 2</option>
+        <option value="3">破壊の星墓 3</option>
+        <option value="4">破壊の星墓 4</option>
+        <option value="5">破壊の星墓 5</option>
+        <option value="6">破壊の星墓 6</option>
+        <option value="7">破壊の星墓 7</option>
+        <option value="8">破壊の星墓 8</option>
+        <option value="9">破壊の星墓 9</option>
+        <option value="10">破壊の星墓 10</option>
+      </select>
+      <button class="orange" onclick="goToStep(4)">次へ</button>
+      <br>
+      <button class="gray" onclick="goBackTo(2)">← モード選択に戻る</button>
+    </section>
+
+    <!-- ステップ4：募集 or 参加画面 -->
+    <section id="step4" class="hidden">
+      <div id="recruitForm" class="hidden">
+        <h2>募集する</h2>
+        <input type="text" id="comment" placeholder="一言コメント">
+        <input type="text" id="url" placeholder="マルチURL">
+        <button class="orange" onclick="submitRecruit()">募集する</button>
+        <br>
+        <button class="gray" onclick="goBackTo(3)">← クエスト選択に戻る</button>
+      </div>
+
+      <div id="joinList" class="hidden">
+        <h2>参加する</h2>
+        <ul id="recruitList"></ul>
+        <br>
+        <button class="gray" onclick="goBackTo(3)">← クエスト選択に戻る</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

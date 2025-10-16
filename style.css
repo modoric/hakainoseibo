@@ -1,0 +1,74 @@
+body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.orange {
+  background-color: #ff9800;
+  color: white;
+}
+button.orange:hover {
+  background-color: #e68900;
+}
+
+button.green {
+  background-color: #4caf50;
+  color: white;
+}
+button.green:hover {
+  background-color: #3e8e41;
+}
+
+button.gray {
+  background-color: #9e9e9e;
+  color: white;
+}
+button.gray:hover {
+  background-color: #7e7e7e;
+}
+
+input, select, textarea {
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+.recruit-card {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 10px auto;
+  width: 80%;
+  background-color: #f9f9f9;
+  text-align: left;
+}
+
+.recruit-card strong {
+  font-size: 18px;
+  color: #333;
+}
+
+.recruit-card a {
+  color: #007bff;
+  word-break: break-all;
+}
