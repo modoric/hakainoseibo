@@ -1,74 +1,61 @@
-body {
-  font-family: sans-serif;
-  background-color: #ffffff;
-  color: #333;
-  text-align: center;
-  padding: 20px;
+let currentMode = '';
+let selectedQuest = '';
+let recruitData = [];
+
+function goToStep(step) {
+  document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+  document.getElementById(`step${step}`).classList.remove('hidden');
+
+  if (step === 4) {
+    selectedQuest = document.getElementById('questSelect').value;
+    if (!selectedQuest) return alert('クエストを選んでください');
+
+    if (currentMode === '募集') {
+      document.getElementById('recruitForm').classList.remove('hidden');
+      document.getElementById('joinList').classList.add('hidden');
+    } else {
+      document.getElementById('recruitForm').classList.add('hidden');
+      document.getElementById('joinList').classList.remove('hidden');
+      showRecruitList();
+    }
+  }
 }
 
-button {
-  margin: 10px;
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+function selectMode(mode) {
+  currentMode = mode;
+  goToStep(3);
 }
 
-button.orange {
-  background-color: #ff9800;
-  color: white;
-}
-button.orange:hover {
-  background-color: #e68900;
-}
-
-button.green {
-  background-color: #4caf50;
-  color: white;
-}
-button.green:hover {
-  background-color: #3e8e41;
+function submitRecruit() {
+  const comment = document.getElementById('comment').value;
+  const url = document.getElementById('url').value;
+  if (!comment || !url) return alert('コメントとURLを入力してください');
+  recruitData.push({ quest: selectedQuest, comment, url });
+  alert('募集を投稿しました！');
+  goToStep(2);
 }
 
-button.gray {
-  background-color: #9e9e9e;
-  color: white;
-}
-button.gray:hover {
-  background-color: #7e7e7e;
-}
-
-input, select, textarea {
-  margin: 10px;
-  padding: 10px;
-  width: 80%;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.hidden {
-  display: none;
-}
-
-.recruit-card {
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  padding: 12px;
-  margin: 10px auto;
-  width: 80%;
-  background-color: #f9f9f9;
-  text-align: left;
+function showRecruitList() {
+  const list = document.getElementById('recruitList');
+  list.innerHTML = '';
+  const filtered = recruitData.filter(r => r.quest === selectedQuest);
+  if (filtered.length === 0) {
+    list.innerHTML = '<li>まだ募集がありません</li>';
+  } else {
+    filtered.forEach(r => {
+      const li = document.createElement('li');
+      li.className = 'recruit-card';
+      li.innerHTML = `
+        <strong>クエスト ${r.quest}</strong><br>
+        コメント：${r.comment}<br>
+        <a href="${r.url}" target="_blank">${r.url}</a>
+      `;
+      list.appendChild(li);
+    });
+  }
 }
 
-.recruit-card strong {
-  font-size: 18px;
-  color: #333;
-}
-
-.recruit-card a {
-  color: #007bff;
-  word-break: break-all;
+function goBackTo(step) {
+  document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+  document.getElementById(`step${step}`).classList.remove('hidden');
 }
