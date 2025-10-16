@@ -10,13 +10,13 @@
 </head>
 <body>
   <div id="app">
-    <!-- ステップ1 -->
+    <!-- ステップ1：破壊の星墓を選択 -->
     <section id="step1">
       <h1>破壊の星墓マルチ掲示板</h1>
       <button class="orange" onclick="goToStep(2)">破壊の星墓を選ぶ</button>
     </section>
 
-    <!-- ステップ2 -->
+    <!-- ステップ2：募集 or 参加 -->
     <section id="step2" class="hidden">
       <h2>モードを選択</h2>
       <button class="orange" onclick="selectMode('募集')">マルチ募集</button>
@@ -25,7 +25,7 @@
       <button class="gray" onclick="goBackTo(1)">← クエストを選び直す</button>
     </section>
 
-    <!-- ステップ3 -->
+    <!-- ステップ3：クエスト選択 -->
     <section id="step3" class="hidden">
       <h2>クエストを選択</h2>
       <label for="questSelect">クエストを選んでください：</label>
@@ -47,7 +47,7 @@
       <button class="gray" onclick="goBackTo(2)">← モード選択に戻る</button>
     </section>
 
-    <!-- ステップ4 -->
+    <!-- ステップ4：募集 or 参加画面 -->
     <section id="step4" class="hidden">
       <div id="recruitForm" class="hidden">
         <h2>募集する</h2>
@@ -59,3 +59,13 @@
       </div>
 
       <div id="joinList" class="hidden">
+        <h2>参加する</h2>
+        <ul id="recruitList"></ul>
+        <br>
+        <button class="gray" onclick="goBackTo(3)">← クエスト選択に戻る</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.jsody>
+</html>
