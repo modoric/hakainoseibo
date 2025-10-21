@@ -72,3 +72,35 @@ input, select, textarea {
   color: #007bff;
   word-break: break-word;
 }
+
+/* スマホ対応（レスポンシブ） */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .recruit-card {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  #app {
+    padding: 10px;
+  }
+}
